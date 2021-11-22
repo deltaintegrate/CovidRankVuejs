@@ -5,15 +5,15 @@ class CovidDataService {
     return http.post("/covid/age",data);
   }
 
-  getAge(data) {
+  gender(data) {
     return http.post("/covid/gender",data);
   }
 
-  getAge(data) {
+  getstate(data) {
     return http.post("/covid/state",data);
   }
 
-  getAge(data) {
+  getcity(data) {
     return http.post("/covid/city",data);
   }
 
