@@ -1,26 +1,22 @@
-import Vue from "vue";
-import Router from "vue-router";
+import { createWebHistory, createRouter } from "vue-router";
 
-Vue.use(Router);
+const routes =  [
+  {
+    path: "/",
+    alias: "/covid",
+    name: "covid",
+    component: () => import("./components/CovidList")
+  },
+  {
+    path: "/add",
+    name: "add",
+    component: () => import("./components/AddCovid")
+  }
+];
 
-export default new Router({
-  mode: "history",
-  routes: [
-    {
-      path: "/",
-      alias: "/covidlist",
-      name: "covidlist",
-      component: () => import("./components/CovidList")
-    },
-    {
-      path: "/covid/:id",
-      name: "tutorial-details",
-      component: () => import("./components/Tutorial")
-    },
-    {
-      path: "/covid",
-      name: "covid",
-      component: () => import("./components/AddCovid")
-    }
-  ]
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
 });
+
+export default router;
