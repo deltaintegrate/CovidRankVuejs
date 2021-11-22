@@ -1,33 +1,34 @@
 import http from "../http-common";
 
 class CovidDataService {
-  getAll() {
-    return http.get("/tutorials");
+  getAge(data) {
+    return http.post("/covid/age",data);
   }
 
-  get(id) {
-    return http.get(`/tutorials/${id}`);
+  getAge(data) {
+    return http.post("/covid/gender",data);
+  }
+
+  getAge(data) {
+    return http.post("/covid/state",data);
+  }
+
+  getAge(data) {
+    return http.post("/covid/city",data);
   }
 
   create(data) {
-    return http.post("/tutorials", data);
+    return http.post("/covid/", data);
   }
 
   update(id, data) {
-    return http.put(`/tutorials/${id}`, data);
+    return http.put(`/covid/${id}`, data);
   }
 
   delete(id) {
-    return http.delete(`/tutorials/${id}`);
+    return http.delete(`/covid/${id}`);
   }
 
-  deleteAll() {
-    return http.delete(`/tutorials`);
-  }
-
-  findByTitle(title) {
-    return http.get(`/tutorials?title=${title}`);
-  }
 }
 
 export default new CovidDataService();
